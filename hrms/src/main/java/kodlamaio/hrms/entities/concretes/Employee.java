@@ -1,6 +1,7 @@
 package kodlamaio.hrms.entities.concretes;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -14,6 +15,8 @@ import lombok.NoArgsConstructor;
 @Table(name="employees")
 
 public class Employee {
+	@Id
+	
 	private int userId;
 	private String firstName;
 	private String lastName;
