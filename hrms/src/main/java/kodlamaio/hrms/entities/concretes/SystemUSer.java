@@ -13,9 +13,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="employees")
+@Table(name="system_user")
 
-public class Employee {
+public class SystemUSer {
 	@Id
 	
 	@Column(name="user_id")
@@ -26,12 +26,5 @@ public class Employee {
 	
 	@Column(name="last_name")
 	private String lastName;
-	
-	@Column(name="identity_number")
-	private String identityNumber;
-	
-	@Column(name="date_of_birth")
-	private int dateOfBirth;
 
-	
 }
