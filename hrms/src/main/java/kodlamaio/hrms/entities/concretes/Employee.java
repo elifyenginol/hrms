@@ -3,6 +3,8 @@ package kodlamaio.hrms.entities.concretes;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -16,8 +18,8 @@ import lombok.NoArgsConstructor;
 @Table(name="employees")
 
 public class Employee {
-	@Id
 	
+	@Id	
 	@Column(name="user_id")
 	private int userId;
 	
@@ -32,6 +34,10 @@ public class Employee {
 	
 	@Column(name="date_of_birth")
 	private int dateOfBirth;
+	
+	@OneToOne
+	@JoinColumn(name="user_id")
+	User user;
 
 	
 }

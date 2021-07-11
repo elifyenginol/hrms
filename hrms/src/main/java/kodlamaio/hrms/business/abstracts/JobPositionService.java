@@ -9,6 +9,7 @@ public interface JobPositionService {
 	
 	DataResult<List<JobPosition>> getAll();
 	Result add(JobPosition jobPosition);
-	
+	DataResult<List<JobPosition>> getAll(int pageNo,int pageSize);
+	DataResult<List<JobPosition>> getAllSorted();
 
 }

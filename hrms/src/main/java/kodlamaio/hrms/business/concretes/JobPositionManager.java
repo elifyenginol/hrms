@@ -3,6 +3,9 @@ package kodlamaio.hrms.business.concretes;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import kodlamaio.hrms.business.abstracts.JobPositionService;
@@ -38,6 +41,17 @@ public class JobPositionManager implements JobPositionService{
 	}
 
 
-	
+	@Override
+	public DataResult<List<JobPosition>> getAll(int pageNo, int pageSize) {
+		Pageable pageable=PageRequest.of(pageNo, pageSize);
+		return new SuccessDataResult<List<JobPosition>>(this.jobPositionDao.findAll(pageable).getContent());
+	}
+
+
+	@Override
+	public DataResult<List<JobPosition>> getAllSorted() {
+		Sort sort=Sort.by(Sort.Direction.DESC,"jobName");
+		return new SuccessDataResult<List<JobPosition>>(this.jobPositionDao.findAll(sort),"Sıralama baaşrılı");
+	}
 
 }

@@ -1,8 +1,13 @@
 package kodlamaio.hrms.entities.concretes;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -16,8 +21,8 @@ import lombok.NoArgsConstructor;
 @Table(name="employers")
 
 public class Employer {
-	@Id
 	
+	@Id	
 	@Column(name="user_id")
 	private int userId;
 	
@@ -32,5 +37,11 @@ public class Employer {
 	
 	@Column(name="verify_by_system")
 	private boolean verifyBySystem;
-
+	
+	@OneToOne
+	@JoinColumn(name="user_id")
+	User user;
+	
+	@OneToMany(mappedBy="employer")
+	private List<JobAdvertisement> jobAdvertisements;
 }

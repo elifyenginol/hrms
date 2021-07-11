@@ -3,6 +3,8 @@ package kodlamaio.hrms.entities.concretes;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -15,7 +17,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name="system_user")
 
-public class SystemUSer {
+public class SystemUser {
 	@Id
 	
 	@Column(name="user_id")
@@ -26,5 +28,9 @@ public class SystemUSer {
 	
 	@Column(name="last_name")
 	private String lastName;
+	
+	@OneToOne
+	@JoinColumn(name="user_id")
+	User user;
 
 }
