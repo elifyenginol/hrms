@@ -12,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -19,12 +21,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties({"hibernateLazyInitializer","handler","cities"})
 @Entity
-@Table(name="job_advertisement")
+@Table(name="job_advertisements")
 
 public class JobAdvertisement {
 	
@@ -33,6 +36,8 @@ public class JobAdvertisement {
 	@Column(name="jobAdvertisement_id")
 	private int jobAdvertisementId;
 	
+	@NotBlank
+	@NotNull
 	@Column(name="advertisement_description")
 	private String advertisementDescription;
 	
@@ -42,6 +47,8 @@ public class JobAdvertisement {
 	@Column(name="max_salary")
 	private int maxSalary;
 	
+	@NotBlank
+	@NotNull
 	@Column(name="need_employee_number")
 	private int needEmployeeNumber;
 	

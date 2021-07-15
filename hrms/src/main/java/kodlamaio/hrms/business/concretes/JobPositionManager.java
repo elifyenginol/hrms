@@ -51,7 +51,7 @@ public class JobPositionManager implements JobPositionService{
 	@Override
 	public DataResult<List<JobPosition>> getAllSorted() {
 		Sort sort=Sort.by(Sort.Direction.DESC,"jobName");
-		return new SuccessDataResult<List<JobPosition>>(this.jobPositionDao.findAll(sort),"Sıralama baaşrılı");
+		return new SuccessDataResult<List<JobPosition>>(this.jobPositionDao.findAll(sort),"Sıralama başarılı");
 	}
 
 }
