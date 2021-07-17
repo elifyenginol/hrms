@@ -44,6 +44,5 @@ public class User {
 	@Column(name="mail_verify")
 	private boolean mailVerify;
 	
-	@Column(name="job_position_id")
-	private int jobPostionId;	
+	
 }
