@@ -45,6 +45,10 @@ public class EmployeesController {
 		return this.employeeService.add(employee);
 	}
 	
-	
+
+	@GetMapping("/getAllByPage")
+	DataResult<List<Employee>> getAll(int pageNo,int pageSize){
+		return this.employeeService.getAll(pageNo-1, pageSize);
+	}
 
 }

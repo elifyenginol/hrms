@@ -8,6 +8,7 @@ import kodlamaio.hrms.entities.concretes.Employee;
 
 public interface EmployeeService {
 	DataResult<List<Employee>> getAll();
+	DataResult<List<Employee>> getAll(int pageNo,int pageSize);
 	DataResult<Employee> getByIdentityNumber(String identityNumber);
 	Result add(Employee employee);
 	

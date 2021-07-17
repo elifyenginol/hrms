@@ -10,11 +10,12 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class jobAdvertisementDetailDto {
+public class JobAdvertisementDetailDto {
 	private String companyName;
-	private String jobDescription;
-	private int needEmployeeNumber;
+	private String jobName;
+	private String cityName;
+	private int numberOfPosition;
 	private Date createDate;
-	private Date lastAplyDate;
+	private Date deadline;
 
 }

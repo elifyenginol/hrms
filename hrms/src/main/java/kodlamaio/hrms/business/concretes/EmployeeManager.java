@@ -2,7 +2,9 @@ package kodlamaio.hrms.business.concretes;
 
 import java.util.List;
 
-
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import kodlamaio.hrms.business.abstracts.EmployeeService;
@@ -18,6 +20,7 @@ public class EmployeeManager implements EmployeeService{
 
 	private EmployeeDao employeeDao;
 
+	@Autowired
 	public EmployeeManager(EmployeeDao employeeDao) {
 		super();
 		this.employeeDao = employeeDao;
@@ -38,6 +41,12 @@ public class EmployeeManager implements EmployeeService{
 	public Result add(Employee employee) {
 		this.employeeDao.save(employee);
 		return new SuccessResult("Üye eklendi");
+	}
+
+	@Override
+	public DataResult<List<Employee>> getAll(int pageNo, int pageSize) {
+		Pageable pageble=PageRequest.of(pageNo, pageSize);
+		return new SuccessDataResult<List<Employee>>(this.employeeDao.findAll(pageble).getContent());
 	}
 	
 }
