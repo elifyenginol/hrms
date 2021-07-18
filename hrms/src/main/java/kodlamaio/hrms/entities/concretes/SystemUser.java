@@ -2,7 +2,6 @@ package kodlamaio.hrms.entities.concretes;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -17,13 +16,8 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name="system_users")
 @EqualsAndHashCode(callSuper = false)
-@PrimaryKeyJoinColumn(name = "user_id")
 public class SystemUser extends User{
-	//@Id	
-	//@GeneratedValue(strategy = GenerationType.IDENTITY)
-	//@Column(name="user_id")
-	//private int userId;
-	
+
 	@NotNull
 	@NotBlank
 	@Column(name="first_name")

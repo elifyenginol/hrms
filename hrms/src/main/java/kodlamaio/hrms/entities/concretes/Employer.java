@@ -5,7 +5,6 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
-import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -21,16 +20,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-
 @EqualsAndHashCode(callSuper = false)
 @Table(name="employers")
-@PrimaryKeyJoinColumn(name = "user_id")
 public class Employer extends User{
-	
-	//@Id	
-	//@GeneratedValue(strategy = GenerationType.IDENTITY)
-	//@Column(name="user_id")
-	//private int userId;
 	
 	@NotNull
 	@NotBlank
@@ -54,6 +46,5 @@ public class Employer extends User{
 	@OneToMany(mappedBy = "employer")
 	private List<JobAdvertisement> jobAdvertisements;
 
-	
 	
 }
