@@ -48,5 +48,10 @@ public class EmployeeManager implements EmployeeService{
 		Pageable pageble=PageRequest.of(pageNo, pageSize);
 		return new SuccessDataResult<List<Employee>>(this.employeeDao.findAll(pageble).getContent());
 	}
+
+	@Override
+	public DataResult<Employee> getAllByMail(String mail) {
+		return new SuccessDataResult<Employee>(this.employeeDao.getAllByMail(mail));
+	}
 	
 }

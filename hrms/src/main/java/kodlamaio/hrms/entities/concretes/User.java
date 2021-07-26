@@ -32,9 +32,9 @@ public class User {
 	@Column(name="id")
 	private int id;
 	
-	@Email
+	@Email(message = "Not suitable for e-mail format")
 	@NotNull
-	@NotBlank
+	@NotBlank(message ="Mail cannot be blank")
 	@Column(name="mail")
 	private String mail;
 	
@@ -42,6 +42,11 @@ public class User {
 	@NotBlank
 	@Column(name="password")
 	private String password;
+	
+	@NotNull
+	@NotBlank
+	@Column(name="re_password")
+	private String rePassword;
 	
 	@Column(name="mail_verify")
 	private boolean mailVerify;

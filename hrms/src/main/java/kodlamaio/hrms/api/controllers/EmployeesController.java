@@ -51,4 +51,8 @@ public class EmployeesController {
 		return this.employeeService.getAll(pageNo-1, pageSize);
 	}
 
+	@GetMapping("getByMail")
+	DataResult<Employee> getAllByMail(@RequestParam String mail){
+		return this.employeeService.getAllByMail(mail);
+	}
 }

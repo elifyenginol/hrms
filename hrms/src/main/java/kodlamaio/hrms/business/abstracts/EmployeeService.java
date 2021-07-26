@@ -11,5 +11,6 @@ public interface EmployeeService {
 	DataResult<List<Employee>> getAll(int pageNo,int pageSize);
 	DataResult<Employee> getByIdentityNumber(String identityNumber);
 	Result add(Employee employee);
+	DataResult<Employee> getAllByMail(String mail);
 	
 }
