@@ -9,7 +9,7 @@ import kodlamaio.hrms.entities.concretes.School;
 public interface SchoolService {
 	Result add(School school);
 	DataResult<List<School>> getAll();
-	DataResult<List<School>> getByUserId(int userId);
-	DataResult<List<School>> getAllByUserIdOrderByEndYear(int userId);
+//	DataResult<List<School>> getByUserId(int userId);
+//	DataResult<List<School>> getAllByUserIdOrderByEndYear(int userId);
 
 }

@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import kodlamaio.hrms.entities.concretes.School;
 
 public interface SchoolDao extends JpaRepository<School, Integer>{
-	List<School> getByUserId(int userId);
-	List<School> getAllByUserIdOrderByEndYear(int userId);
+	//List<School> getByUserId(int userId);
+	//List<School> getAllByUserIdOrderByEndYear(int userId);
 
 }

@@ -36,14 +36,14 @@ public class SchoolsController {
 		return this.schoolService.getAll();
 	}
 	
-	@GetMapping("/getByUserId")
-	DataResult<List<School>> getByUserId(@RequestParam int userId){
-		return this.schoolService.getByUserId(userId);
-	}
-	
-	@GetMapping("/getAllByUserIdOrderByEndYear")
-	DataResult<List<School>> getAllByUserIdOrderByEndYear(@RequestParam int userId){
-		return this.schoolService.getAllByUserIdOrderByEndYear(userId);
-	}
+//	@GetMapping("/getByUserId")
+//	DataResult<List<School>> getByUserId(@RequestParam int userId){
+//		return this.schoolService.getByUserId(userId);
+//	}
+//	
+//	@GetMapping("/getAllByUserIdOrderByEndYear")
+//	DataResult<List<School>> getAllByUserIdOrderByEndYear(@RequestParam int userId){
+//		return this.schoolService.getAllByUserIdOrderByEndYear(userId);
+//	}
 
 }

@@ -35,14 +35,14 @@ public class SchoolManager implements SchoolService{
 		return new SuccessDataResult<List<School>>(this.schoolDao.findAll());
 	}
 
-	@Override
-	public DataResult<List<School>> getByUserId(int userId) {
-		return new SuccessDataResult<List<School>>(this.schoolDao.getByUserId(userId));
-	}
-
-	@Override
-	public DataResult<List<School>> getAllByUserIdOrderByEndYear(int userId) {
-		return new SuccessDataResult<List<School>>(this.schoolDao.getAllByUserIdOrderByEndYear(userId));
-	}
+//	@Override
+//	public DataResult<List<School>> getByUserId(int userId) {
+//		return new SuccessDataResult<List<School>>(this.schoolDao.getByUserId(userId));
+//	}
+//
+//	@Override
+//	public DataResult<List<School>> getAllByUserIdOrderByEndYear(int userId) {
+//		return new SuccessDataResult<List<School>>(this.schoolDao.getAllByUserIdOrderByEndYear(userId));
+//	}
 
 }
